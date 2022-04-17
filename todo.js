@@ -1,17 +1,20 @@
 const todoList = document.querySelector("ul");
 const todoItem= document.querySelector("li");
 const todoCount = document.querySelector(".todo-count strong");
+const todoComplete = document.querySelector(".clear-completed");
 function addNewTodo(event) {
-  if (event.keyCode == 13) {
+  if (event.keyCode == 13) { 
     var todo = document.getElementById("new-todo");
-    console.log(todo.value);
-
-    createNewTodoElement(todo.value);
-    setCountTodo(1);
-    document.getElementById("toggle-icon").style.display="block"
-    document.getElementById("main").style.display="block";
-    document.getElementById("footer").style.display="block";
-   todo.value = "";
+    
+      if(todo.value.trim().length > 0){
+        console.log(todo.value);
+        createNewTodoElement(todo.value);
+        setCountTodo(1);
+        document.getElementById("toggle-icon").style.display="block"
+        document.getElementById("main").style.display="block";
+        document.getElementById("footer").style.display="block";
+      todo.value = "";
+      }
   }
 }
 //update todo item
@@ -50,8 +53,8 @@ todoList.addEventListener('click', (event) => {
   if (event.target.classList.contains('destroy')) {
     const myParent = event.target.parentElement;
     myParent.parentElement.remove();
-    setCountTodo(-1);
-    document.getElementById("footer").style.display="block";
+    if(!((event.target).parentElement).parentElement.classList.contains('completed'))
+      setCountTodo(-1);
   }
 
   if(event.target.classList.contains('toggle')){
@@ -70,7 +73,11 @@ todoList.addEventListener('click', (event) => {
   }
   
 })
+// clear completed item   
 
-//check todo completed item
+todoComplete.addEventListener('click', (event) => {
+  var complete = document.getElementsByClassName("completed");
+  console.log(complete);
 
+});
 
