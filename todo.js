@@ -71,6 +71,11 @@ todoList.addEventListener('click', (event) => {
   
 })
 
-//check todo completed item
-
+document.querySelector(".clear-completed").addEventListener('click', (event)=>{
+  var delCompleted = document.querySelectorAll(".completed");
+  delCompleted.forEach(item => {
+    item.remove();
+  });
+  console.log(delCompleted);
+});
 
