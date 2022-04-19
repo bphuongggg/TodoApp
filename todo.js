@@ -70,7 +70,42 @@ todoList.addEventListener('click', (event) => {
   }
   
 })
+function filterClick(id){
+  document.querySelectorAll('.filters li a').forEach(id => {
+      id.addEventListener('click', (event)=>{
+        if(event.target){
+          id.classList.add("selected");
+        }
+      })
+      id.classList.remove("selected");
+    })
+};
+document.querySelector("#Completed").addEventListener('click', (event)=>{
+  document.querySelectorAll(".todo-list li").forEach(item =>{
+   if(!item.classList.contains('completed')){
+     console.log(!item.classList.contains('completed'));
+     item.classList.add("hidden");
+   } 
+   else{item.classList.remove("hidden");}
+  })
+})
 
-//check todo completed item
+document.querySelector("#All").addEventListener('click', (event)=>{
+  document.querySelectorAll(".todo-list li").forEach(item =>{
+   if(!item.classList.contains('completed')){ 
+     item.classList.remove("hidden");
+   } 
+   else{item.classList.remove("hidden");}
+  })
+})
+
+document.querySelector("#Active").addEventListener('click', (event)=>{
+  document.querySelectorAll(".todo-list li").forEach(item =>{
+   if(item.classList.contains('completed')){ 
+     item.classList.add("hidden");
+   } 
+   else{item.classList.remove("hidden");}
+  })
+})
 
 
