@@ -1,34 +1,55 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Template • TodoMVC</title>
-    <link rel="stylesheet" href="./style.css" />
-  </head>
-  <body>
-    <section class="todoapp">
-      <header class="header">
-        <h1>todos</h1>
-        <input
-          class="new-todo"
-          placeholder="What needs to be done?"
-          id="new-todo"
-          onkeydown="addNewTodo(event)"
-        />
-      </header>
-
-
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Template • TodoMVC</title>
+		<link rel="stylesheet" href="./style.css">
+	</head>
+	<body>
+		<section class="todoapp">
+			<header class="header">
+				<h1>todos</h1>
+				<input class="new-todo" placeholder="What needs to be done?" id="new-todo" 	onkeydown="addNewTodo(event)">
+			</header>
+	
+			<section class="" id="main">
+				<input id="toggle-all" class="toggle-all" type="checkbox">
+				<label for="toggle-all" class="hidden" id="toggle-icon">Mark all as complete</label>
+				<ul class="todo-list" id="todo-list">
+					<li class="completed" hidden>
+						<div class="view">
+							<input class="toggle" type="checkbox" checked>
+							<label>Taste JavaScript</label>
+							<button class="destroy"></button>
+						</div>
+						<input class="edit" value="Create a TodoMVC template">
+					</li>
+					<li hidden>
+						<div class="view">
+							<input class="toggle" type="checkbox">
+							<label>Buy a unicorn</label>
+							<button class="destroy"></button>
+						</div>
+						<input class="edit">
+					</li>
+				</ul>
+			</section>
+			
+			<div id="footer" hidden>
 				<span class="todo-count"><strong>0</strong> item left</span>
 				<ul class="filters">
 					<li>
-						<a class="selected" href="#/" id="All" onclick="filterClick(All)">All</a>
+	
+						<a class="selected" href="#/" id="_all" onclick="filterClick(_all)">All</a>
 					</li>
 					<li>
-						<a href="#/active" id="Active" onclick="filterClick(Active)" >Active</a>
+			
+						<a href="#/active" id="_active" onclick="filterClick(_active)" >Active</a>
 					</li>
 					<li>
-						<a href="#/completed" id="Completed"  onclick="filterClick(Completed)" >Completed</a>
+
+						<a href="#/completed" id="_completed"  onclick="filterClick(_completed)" >Completed</a>
 					</li>
 				</ul>
 				<button class="clear-completed">Clear completed</button>
@@ -42,58 +63,4 @@
 		
 		<script src="./todo.js"></script>
 	</body>
-</html>
-
-      <section class="" id="main">
-        <input id="toggle-all" class="toggle-all" type="checkbox" />
-        <label for="toggle-all" class="hidden" id="toggle-icon"
-          >Mark all as complete</label
-        >
-        <ul class="todo-list" id="todo-list">
-          <li class="completed" id="completed" hidden   >
-            <div class="view">
-              <input class="toggle" type="checkbox" checked />
-              <label>Taste JavaScript</label>
-              <button class="destroy"></button>
-            </div>
-            <input class="edit" value="Create a TodoMVC template" />
-          </li>
-          <li hidden>
-            <div class="view">
-              <input class="toggle" type="checkbox" />
-              <label>Buy a unicorn</label>
-              <button class="destroy"></button>
-            </div>
-            <input class="edit" />
-          </li>
-        </ul>
-      </section>
-
-      <div id="footer" hidden>
-        <span class="todo-count"><strong>0</strong> item left</span>
-        <ul class="filters">
-          <li>
-            <a class="selected" href="#/">All</a>
-          </li>
-          <li>
-            <a href="#/active">Active</a>
-          </li>
-          <li>
-            <a href="#/completed">Completed</a>
-          </li>
-        </ul>
-        <button class="clear-completed">Clear completed</button>
-      </div>
-    </section>
-    <footer class="info">
-      <p>Double-click to edit a todo</p>
-      <p>
-        Created by Preston Sego -
-        <a href="https://twitter.com/NullVoxPopuli"> @NullVoxPopuli</a>
-      </p>
-      <p>Part of <a href="https://todomvc.com/">TodoMVC</a></p>
-    </footer>
-
-    <script src="./todo.js"></script>
-  </body>
 </html>
