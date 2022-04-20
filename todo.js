@@ -76,7 +76,7 @@ function filterClick(id){
       id.classList.remove("selected");
     })
 };
-document.querySelector("#Completed").addEventListener('click', (event)=>{
+document.querySelector("#_completed").addEventListener('click', (event)=>{
   document.querySelectorAll(".todo-list li").forEach(item =>{
    if(!item.classList.contains('completed')){
      console.log(!item.classList.contains('completed'));
@@ -91,9 +91,8 @@ document.querySelector(".clear-completed").addEventListener('click', (event)=>{
   delCompleted.forEach(item => {
     item.remove();
   });
-  console.log(delCompleted);
 });
-document.querySelector("#All").addEventListener('click', (event)=>{
+document.querySelector("#_all").addEventListener('click', (event)=>{
   document.querySelectorAll(".todo-list li").forEach(item =>{
    if(!item.classList.contains('completed')){ 
      item.classList.remove("hidden");
@@ -102,7 +101,7 @@ document.querySelector("#All").addEventListener('click', (event)=>{
   })
 })
 
-document.querySelector("#Active").addEventListener('click', (event)=>{
+document.querySelector("#_active").addEventListener('click', (event)=>{
   document.querySelectorAll(".todo-list li").forEach(item =>{
    if(item.classList.contains('completed')){ 
      item.classList.add("hidden");

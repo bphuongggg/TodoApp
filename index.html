@@ -17,7 +17,7 @@
 				<input id="toggle-all" class="toggle-all" type="checkbox">
 				<label for="toggle-all" class="hidden" id="toggle-icon">Mark all as complete</label>
 				<ul class="todo-list" id="todo-list">
-					<li class="completed">
+					<li class="completed" hidden>
 						<div class="view">
 							<input class="toggle" type="checkbox" checked>
 							<label>Taste JavaScript</label>
@@ -41,15 +41,15 @@
 				<ul class="filters">
 					<li>
 	
-						<a class="selected" href="#/" id="All" onclick="filterClick(All)">All</a>
+						<a class="selected" href="#/" id="_all" onclick="filterClick(_all)">All</a>
 					</li>
 					<li>
 			
-						<a href="#/active" id="Active" onclick="filterClick(Active)" >Active</a>
+						<a href="#/active" id="_active" onclick="filterClick(_active)" >Active</a>
 					</li>
 					<li>
 
-						<a href="#/completed" id="Completed"  onclick="filterClick(Completed)" >Completed</a>
+						<a href="#/completed" id="_completed"  onclick="filterClick(_completed)" >Completed</a>
 					</li>
 				</ul>
 				<button class="clear-completed">Clear completed</button>
