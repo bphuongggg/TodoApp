@@ -302,7 +302,8 @@ body {
 }
 
 .filters li a.selected {
-	border-color: rgba(175, 47, 47, 0.2);
+	border: 3px solid #C71585;
+	border-radius: 5px;
 }
 
 .clear-completed,
